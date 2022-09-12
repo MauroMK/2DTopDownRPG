@@ -7,10 +7,15 @@ public class Player : MonoBehaviour
     
     public float moveSpeed;
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     
     Vector2 movement;
     
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
