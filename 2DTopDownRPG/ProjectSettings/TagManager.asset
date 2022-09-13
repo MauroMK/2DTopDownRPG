@@ -44,3 +44,6 @@ TagManager:
   - name: Ground
     uniqueID: 867072555
     locked: 0
+  - name: Interactible
+    uniqueID: 2668792571
+    locked: 0
