@@ -12,6 +12,11 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
+        CameraMove();
+    }
+
+    private void CameraMove()
+    {
         Vector3 delta = Vector3.zero;
 
         // Checks if we'are inside the bounds on the X axis
