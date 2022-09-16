@@ -18,7 +18,7 @@ public class FloatingTextManager : MonoBehaviour
         }
     }
 
-    private void Show(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
+    public void Show(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         FloatingText floatingText = GetFloatingText();
 
@@ -36,14 +36,6 @@ public class FloatingTextManager : MonoBehaviour
 
     private FloatingText GetFloatingText()
     {
-        /* 
-        for (int i = 0; i < floatingTexts.Count; i++)
-        {
-            if(!floatingTexts[i].active)
-        } 
-        same thing 
-        */
-
         // Function that returns a floating text
         FloatingText txt = floatingTexts.Find(t => !t.active);
 
