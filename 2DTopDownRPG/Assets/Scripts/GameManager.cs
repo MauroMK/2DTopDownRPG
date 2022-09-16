@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         
         instance = this;
         SceneManager.sceneLoaded += LoadState;
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); // Keeps the same game manager when you load another scene
     }
 
     // Ressources
