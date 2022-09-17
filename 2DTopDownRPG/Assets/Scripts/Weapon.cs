@@ -36,6 +36,27 @@ public class Weapon : Collidable
         }
     }
 
+    protected override void OnCollide(Collider2D other)
+    {
+        if (other.tag == "Fighter")
+        {
+            if (other.name == "Player")
+            {
+               return; 
+            }
+
+            // Create a new damage object, then we'll send it to the fighter we've hit
+            Damage dmg = new Damage
+            {
+                damageAmount = damagePoint,
+                origin = transform.position,
+                knockback = knockback
+            };
+
+            other.SendMessage("ReceiveDamage", dmg);
+        }
+    }
+
     private void Swing()
     {
         Debug.Log("Swing");
