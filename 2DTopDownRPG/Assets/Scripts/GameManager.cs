@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject); // Keeps the same game manager when you load another scene
     }
 
-    // Ressources
+    // Resources
     public List<Sprite> playerSprites;
     public List<Sprite> weaponSprites;
     public List<int> weaponPrices;

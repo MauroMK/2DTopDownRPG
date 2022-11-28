@@ -14,7 +14,7 @@ public class Weapon : Collidable
 
     // Swing
     private float cooldown = 0.5f;
-    private float lastSwing ;
+    private float lastSwing;
 
     protected override void Awake()
     {
