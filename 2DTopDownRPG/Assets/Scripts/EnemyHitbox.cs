@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyHitbox : Collidable
 {
-    public int damage = 3;
-    public float knockback;
+    public int damage = 1;
+    public float knockback = 2;
 
     protected override void OnCollide(Collider2D other)
     {

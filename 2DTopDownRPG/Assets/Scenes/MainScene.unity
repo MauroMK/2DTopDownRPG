@@ -396,6 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 536970132}
   - component: {fileID: 536970133}
+  - component: {fileID: 536970134}
   m_Layer: 6
   m_Name: Hitbox
   m_TagString: Untagged
@@ -444,6 +445,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.105522305, y: 0.14215434}
   m_EdgeRadius: 0
+--- !u!114 &536970134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536970131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bdb616595cf543901fb28f5a617d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  damage: 1
+  knockback: 3
 --- !u!1 &555690181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,7 +4284,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   damagePoint: 1
-  knockback: 2
+  knockback: 4
   weaponLevel: 0
 --- !u!61 &1809366852
 BoxCollider2D:
