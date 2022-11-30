@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] private GameObject container;
-    [SerializeField] private GameObject backgroundButton;
     
     private float speed = 0.5f;
+    private float fadeSpeed = 0.5f;
     private float offScreen = 750;
     private float onScreen = 300;
 
@@ -17,23 +17,22 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        backgroundButton.SetActive(false);
+        canvasGroup.alpha = 0;
     }
 
     public void MoveMenuUp()
     {
-        LeanTween.moveY(container, offScreen, speed);
-        this.gameObject.LeanAlpha(0, speed);
-        canvasGroup.interactable = false;
+        LeanTween.moveY(container, offScreen, speed); // Moves the container up
+        LeanTween.alphaCanvas(canvasGroup, 0, fadeSpeed);
+        canvasGroup.interactable = false;               
         canvasGroup.blocksRaycasts = false;
     }
 
     public void MoveMenuDown()
     {
         LeanTween.moveY(container, onScreen, speed);
-        this.gameObject.LeanAlpha(1, speed);
+        LeanTween.alphaCanvas(canvasGroup, 1, fadeSpeed);
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
-        backgroundButton.SetActive(true);
     }
 }
