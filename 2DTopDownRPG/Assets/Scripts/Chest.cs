@@ -7,7 +7,7 @@ using UnityEngine;
 public class Chest : Collectable
 {
     public Sprite emptyChest;
-    public int coinsAmount = 5;
+    public int coinsAmount;
 
     protected override void OnCollect()
     {
@@ -15,6 +15,7 @@ public class Chest : Collectable
         {
             collected = true;
             GetComponent<SpriteRenderer>().sprite = emptyChest;
+            GameManager.instance.coins =+ coinsAmount;
             GameManager.instance.ShowText("+" + coinsAmount + " coins", 25, Color.yellow, transform.position, Vector3.up * 30, 1.5f);
         }
     }

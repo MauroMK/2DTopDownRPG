@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CharacterMenu : MonoBehaviour
 {
     // Text
-    public Text levelText, hitpoinText, pesosText, upgradeCostText, xpText;
+    public Text levelText, hitpoinText, coinsText, upgradeCostText, xpText;
 
     // Logic
     private int currentCharacterSelection = 0;
@@ -64,7 +64,7 @@ public class CharacterMenu : MonoBehaviour
 
         // Meta
         hitpoinText.text = GameManager.instance.player.hitpoint.ToString();
-        pesosText.text = GameManager.instance.coins.ToString();
+        coinsText.text = GameManager.instance.coins.ToString();
         levelText.text = "NOT IMPLEMENTED";
 
         // XP bar
