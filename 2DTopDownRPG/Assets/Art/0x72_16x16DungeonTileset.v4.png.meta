@@ -1397,7 +1397,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1405,6 +1405,27 @@ TextureImporter:
       bones: []
       spriteID: a3304857932384f4989f10fa25157285
       internalID: -356100900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dwarf_0
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a870b64f87def8547922e5e8ed0e3569
+      internalID: 1751690815
       vertices: []
       indices: 
       edges: []
@@ -1436,6 +1457,7 @@ TextureImporter:
       floor_4: 1464281949
       wall_3: 1707008757
       wall_5: 624338037
+      dwarf_0: 1751690815
       torch_6: 2014265852
       crate_2: 1185025781
       weapon_3: -943450334

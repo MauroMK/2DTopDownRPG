@@ -20,28 +20,28 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject); // Keeps the same game manager when you load another scene
     }
 
-    // Resources
+    //* Resources
     public List<Sprite> playerSprites;
     public List<Sprite> weaponSprites;
     public List<int> weaponPrices;
     public List<int> xpTable;
 
-    // References
+    //* References
     public Player player;
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
 
-    // Logic
+    //* Logic
     public int coins;
     public int experience;
 
-    // Floating Text
+    //* Floating Text
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
 
-    // Upgrade Weapon
+    //* Upgrade Weapon
     public bool TryUpgradeWeapon()
     {
         // Is the weapon max level?
@@ -86,10 +86,10 @@ public class GameManager : MonoBehaviour
 
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
 
-        // Change player skin
+        //* Change player skin
         coins = int.Parse(data[1]);
         experience = int.Parse(data[2]);
-        // Change the weapon level
+        //* Change the weapon level
         weapon.SetWeaponLevel(int.Parse(data[3]));
     }
 }
