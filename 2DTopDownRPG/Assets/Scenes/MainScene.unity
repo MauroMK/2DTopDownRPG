@@ -3370,7 +3370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885217053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.309, y: 0.374, z: 0}
+  m_LocalPosition: {x: 0.326, y: 0.454, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5908,7 +5908,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1538736026}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1632734516}
+        m_TargetAssemblyTypeName: CharacterMenu, Assembly-CSharp
+        m_MethodName: OnUpgradeClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1538736026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6251,7 +6263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelText: {fileID: 973390192}
   hitpoinText: {fileID: 680760943}
-  coinsText: {fileID: 0}
+  coinsText: {fileID: 1835540873}
   upgradeCostText: {fileID: 1565047623}
   xpText: {fileID: 1543832642}
   characterSelectionSprite: {fileID: 716585791}
@@ -6525,8 +6537,14 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damagePoint: 1
-  knockback: 4
+  damagePoint: 010000000200000003000000040000000500000006000000
+  knockback:
+  - 2
+  - 2.2
+  - 2.4
+  - 2.6
+  - 2.8
+  - 3
   weaponLevel: 0
 --- !u!61 &1809366852
 BoxCollider2D:
@@ -17540,9 +17558,10 @@ MonoBehaviour:
   - {fileID: -943450334, guid: 711b6c057eaf53d44a6795e7578fc3c2, type: 3}
   - {fileID: 1132309162, guid: 711b6c057eaf53d44a6795e7578fc3c2, type: 3}
   - {fileID: -326951779, guid: 711b6c057eaf53d44a6795e7578fc3c2, type: 3}
-  weaponPrices: 
+  weaponPrices: 1e0000004600000082000000c80000002c010000
   xpTable: 
   player: {fileID: 1069306059}
+  weapon: {fileID: 1809366851}
   floatingTextManager: {fileID: 574901189}
   coins: 0
   experience: 0

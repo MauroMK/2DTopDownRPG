@@ -52,14 +52,17 @@ public class CharacterMenu : MonoBehaviour
     // Weapon upgrade
     public void OnUpgradeClick()
     {
-
+        if (GameManager.instance.TryUpgradeWeapon())
+        {
+            UpdateMenu();
+        }
     }
 
     // Update the character information
     public void UpdateMenu()
     {
         // Weapon
-        weaponSprite.sprite = GameManager.instance.weaponSprites[0];
+        weaponSprite.sprite = GameManager.instance.weaponSprites[GameManager.instance.weapon.weaponLevel];
         upgradeCostText.text = "NOT IMPLEMENTED";
 
         // Meta
