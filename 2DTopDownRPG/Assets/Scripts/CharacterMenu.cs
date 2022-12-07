@@ -76,10 +76,28 @@ public class CharacterMenu : MonoBehaviour
         // Meta
         hitpoinText.text = GameManager.instance.player.hitpoint.ToString();
         coinsText.text = GameManager.instance.coins.ToString();
-        levelText.text = "NOT IMPLEMENTED";
+        levelText.text = GameManager.instance.GetCurrentLevel().ToString();
 
         // XP bar
-        xpText.text = "NOT IMPLEMENTED";
-        xpBar.localScale = new Vector3(0.5f, 0, 0);
+
+        int currLevel = GameManager.instance.GetCurrentLevel();
+
+        if (currLevel == GameManager.instance.xpTable.Count) // If max level
+        {
+            xpText.text = GameManager.instance.experience.ToString() + "total xp"; // Display total xp
+            xpBar.localScale = Vector3.one;
+        }
+        else
+        {
+            int previousLevelXp = GameManager.instance.GetXToLevel(currLevel - 1);
+            int currLevelXp = GameManager.instance.GetXToLevel(currLevel);
+
+            int difference = currLevelXp - previousLevelXp;
+            int currXpIntoLevel = GameManager.instance.experience - previousLevelXp;
+
+            float completionRatio = (float)currXpIntoLevel / (float)difference;
+            xpBar.localScale = new Vector3(completionRatio, 1, 1);
+            xpText.text = currXpIntoLevel.ToString() + " / " + difference;
+        }
     }
 }

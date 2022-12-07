@@ -58,6 +58,37 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    public int GetCurrentLevel()
+    {
+        int r = 0;
+        int add = 0;
+
+        while (experience >= add)
+        {
+            add += xpTable[r];
+            r++;
+
+            if (r == xpTable.Count) //* If max level
+                return r;
+        }
+
+        return r;
+    }
+
+    public int GetXToLevel(int level)
+    {
+        int r = 0;
+        int xp = 0;
+
+        while (r < level)
+        {
+            xp += xpTable[r];
+            r++;
+        }
+
+        return xp;
+    }
+
 
     //Save state
     /*
