@@ -89,8 +89,8 @@ public class CharacterMenu : MonoBehaviour
         }
         else
         {
-            int previousLevelXp = GameManager.instance.GetXToLevel(currLevel - 1);
-            int currLevelXp = GameManager.instance.GetXToLevel(currLevel);
+            int previousLevelXp = GameManager.instance.GetXpToLevel(currLevel - 1);
+            int currLevelXp = GameManager.instance.GetXpToLevel(currLevel);
 
             int difference = currLevelXp - previousLevelXp;
             int currXpIntoLevel = GameManager.instance.experience - previousLevelXp;

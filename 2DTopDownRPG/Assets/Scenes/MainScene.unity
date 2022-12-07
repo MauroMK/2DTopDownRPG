@@ -5085,7 +5085,7 @@ MonoBehaviour:
   hitpoint: 3
   maxHitpoint: 3
   pushRecoverySpeed: 0.2
-  xpValue: 1
+  xpValue: 10
   triggerLenght: 0.3
   chaseLenght: 1
   filter:
@@ -5201,8 +5201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136e0480df970f74694a37691c9d55e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 10
-  maxHitpoint: 10
+  hitpoint: 5
+  maxHitpoint: 5
   pushRecoverySpeed: 0.2
 --- !u!61 &1069306061
 BoxCollider2D:

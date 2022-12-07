@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    //* Experience System
     public int GetCurrentLevel()
     {
         int r = 0;
@@ -75,7 +76,7 @@ public class GameManager : MonoBehaviour
         return r;
     }
 
-    public int GetXToLevel(int level)
+    public int GetXpToLevel(int level)
     {
         int r = 0;
         int xp = 0;
@@ -89,6 +90,21 @@ public class GameManager : MonoBehaviour
         return xp;
     }
 
+    public void GrantXp(int xp)
+    {
+        int currentLevel = GetCurrentLevel(); // Get the current level before getting the experience
+        experience += xp;
+
+        if (currentLevel < GetCurrentLevel()) // If did level up, call the function OnLevelUp
+        {
+            OnLevelUp();
+        }
+    }
+
+    public void OnLevelUp()
+    {
+        player.OnLevelUp();
+    }
 
     //Save state
     /*
@@ -111,15 +127,19 @@ public class GameManager : MonoBehaviour
 
     public void LoadState(Scene saving, LoadSceneMode mode)
     {
-
         if(!PlayerPrefs.HasKey("SaveState"))
-        return;
+            return;
 
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
 
         //* Change player skin
         coins = int.Parse(data[1]);
+
+        //* Experience
         experience = int.Parse(data[2]);
+        if (GetCurrentLevel() != 1)
+            player.SetLevel(GetCurrentLevel());
+
         //* Change the weapon level
         weapon.SetWeaponLevel(int.Parse(data[3]));
     }
