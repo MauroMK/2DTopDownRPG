@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     // That's the player
-    public Transform lookAt;
+    private Transform lookAt;
 
     public float boundX = 0.15f;
     public float boundY = 0.05f;
