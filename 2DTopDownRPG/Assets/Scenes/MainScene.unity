@@ -17519,6 +17519,8 @@ MonoBehaviour:
   weapon: {fileID: 1809366851}
   floatingTextManager: {fileID: 1382431586}
   hitpointBar: {fileID: 1633663710}
+  hud: {fileID: 224500512}
+  menu: {fileID: 1632734509}
   coins: 0
   experience: 0
 --- !u!4 &2144720333
