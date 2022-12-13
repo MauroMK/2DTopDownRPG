@@ -19,8 +19,6 @@ public class GameManager : MonoBehaviour
         
         instance = this;
         SceneManager.sceneLoaded += LoadState;
-        
-        DontDestroyOnLoad(gameObject); // Keeps the same game manager when you load another scene
     }
 
     //* Resources
@@ -33,6 +31,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
+    public RectTransform hitpointBar;
 
     //* Logic
     public int coins;
@@ -59,6 +58,13 @@ public class GameManager : MonoBehaviour
         }
         
         return false;
+    }
+
+    //* Hitpoint bar
+    public void OnHitpointChange()
+    {
+        float ratio = (float)player.hitpoint / (float)player.maxHitpoint;
+        hitpointBar.localScale = new Vector3(1, ratio, 1);
     }
 
     //* Experience System
