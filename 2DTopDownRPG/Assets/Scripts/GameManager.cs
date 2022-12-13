@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
         
         instance = this;
         SceneManager.sceneLoaded += LoadState;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     //* Resources
@@ -117,7 +118,15 @@ public class GameManager : MonoBehaviour
     public void OnLevelUp()
     {
         player.OnLevelUp();
+        OnHitpointChange();
         //TODO throw some particles like runescape and a text saying you leveled up
+    }
+
+    //* On Scene Loaded
+    public void OnSceneLoaded(Scene saving, LoadSceneMode mode)
+    {
+        //* Teleport to the checkpoint
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 
     //Save state
@@ -141,6 +150,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadState(Scene saving, LoadSceneMode mode)
     {
+        SceneManager.sceneLoaded -= LoadState;
+
         if(!PlayerPrefs.HasKey("SaveState"))
             return;
 
@@ -156,8 +167,5 @@ public class GameManager : MonoBehaviour
 
         //* Change the weapon level
         weapon.SetWeaponLevel(int.Parse(data[3]));
-
-        //* Teleport to the checkpoint
-        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 }
