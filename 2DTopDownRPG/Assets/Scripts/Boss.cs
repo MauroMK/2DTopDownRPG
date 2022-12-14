@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss : Enemy
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float distance = 0.5f;
+    public float[] fireballSpeed = {2.5f, -2.5f};
+    public Transform[] fireballs;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        for (int i = 0; i < fireballs.Length; i++)
+        {
+            fireballs[i].position = transform.position + new Vector3(-Mathf.Cos(fireballSpeed[i] * Time.time) * distance, Mathf.Sin(fireballSpeed[i] * Time.time) * distance, 0);
+        }
     }
 }
