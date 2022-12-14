@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public RectTransform hitpointBar;
     public GameObject hud;
     public GameObject menu;
+    public GameObject deathMenu;
 
     //* Logic
     public int coins;
@@ -46,6 +47,20 @@ public class GameManager : MonoBehaviour
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+    }
+
+    //* Death Menu
+    public void ShowDeathMenu()
+    {
+        deathMenu.SetActive(true);
+    }
+
+    //* Respawn
+    public void RespawnButton()
+    {
+        SceneManager.LoadScene("MainScene");
+        deathMenu.SetActive(false);
+        player.Respawn();
     }
 
     //* Upgrade Weapon
