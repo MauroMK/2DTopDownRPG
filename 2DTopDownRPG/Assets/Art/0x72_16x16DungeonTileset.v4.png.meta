@@ -1418,7 +1418,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1426,6 +1426,48 @@ TextureImporter:
       bones: []
       spriteID: a870b64f87def8547922e5e8ed0e3569
       internalID: 1751690815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_0
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6ca68125271544992bb9b1af5b506b
+      internalID: -1731834294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b577e67f607ccf14cad9aa6c1011fe4d
+      internalID: 331524052
       vertices: []
       indices: 
       edges: []
@@ -1473,6 +1515,7 @@ TextureImporter:
       enemy_0: 1030852269
       torch_4: -1551512223
       NPC_0: -998392814
+      boss_0: -1731834294
       0x72_16x16DungeonTileset.v4_1: 1661902738
       weapon_5: -326951779
       floor_6: -1520766838
@@ -1482,6 +1525,7 @@ TextureImporter:
       torch_1: 2115209775
       floor_0: -122893953
       weapon_0: 1873739353
+      enemy_1: 331524052
       weapon_1: 596057108
       wall_2: 1504795775
       wall_6: -1220317410
